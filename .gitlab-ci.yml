@@ -1,0 +1,56 @@
+stages:
+  - validate
+  - build
+  - package
+
+# Use a Python image; if your runner is air-gapped, pre-build a Docker
+# image with the deps baked in (see ci/Dockerfile.airgap as a starting point).
+default:
+  image: python:3.11-slim
+  before_script:
+    - pip install --quiet pydantic
+
+# ---------------------------------------------------------------------------
+# Validate: parse every CSV and fail loudly if any schema breaks.
+# This runs in --strict mode so unresolved cross-references also fail the build.
+# ---------------------------------------------------------------------------
+validate:
+  stage: validate
+  script:
+    - python -m builder.build --strict --out /tmp/validate-out
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH'
+
+# ---------------------------------------------------------------------------
+# Build: produce the dist/ directory (lenient on warnings).
+# ---------------------------------------------------------------------------
+build:
+  stage: build
+  script:
+    - python -m builder.build --out dist
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+# ---------------------------------------------------------------------------
+# Package: zip the multi-file layout, AND surface the single-file HTML
+# as its own downloadable artifact for operators who just want to
+# double-click and go.
+# ---------------------------------------------------------------------------
+package:
+  stage: package
+  needs: [build]
+  script:
+    - cp dist/index.html "opscon-${CI_COMMIT_SHORT_SHA}.html"
+    - cd dist
+    - zip -qr "../opscon-all-${CI_COMMIT_SHORT_SHA}.zip" .
+    - cd ..
+    - ls -lh opscon-*.zip opscon-*.html
+  artifacts:
+    name: "opscon-${CI_COMMIT_SHORT_SHA}"
+    paths:
+      - opscon-*.html
+      - opscon-all-*.zip
+    expire_in: 1 month

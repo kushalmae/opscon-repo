@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPSCON · Spacecraft Operations Console</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-glyph">◈</span>
+      <span class="brand-name">OPSCON</span>
+      <span class="brand-sub">Operations Reference</span>
+    </div>
+    <div class="version-selector">
+      <label for="fsw-select">FSW</label>
+      <select id="fsw-select"></select>
+    </div>
+    <div class="search-wrap">
+      <input type="search" id="search-input"
+             placeholder="Search commands, telemetry, alerts, FDIR, flight rules, procedures…"
+             autocomplete="off" spellcheck="false">
+      <kbd class="search-kbd">/</kbd>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <a href="#/" class="nav-item nav-home" data-section="home">
+      <span class="nav-glyph">◐</span> Overview
+    </a>
+    <a href="#/commands" class="nav-item" data-section="commands">
+      <span class="nav-glyph">▸</span> Commands
+      <span class="nav-count" id="count-commands"></span>
+    </a>
+    <a href="#/telemetry" class="nav-item" data-section="telemetry">
+      <span class="nav-glyph">◇</span> Telemetry
+      <span class="nav-count" id="count-telemetry"></span>
+    </a>
+    <a href="#/alerts" class="nav-item" data-section="alerts">
+      <span class="nav-glyph">▲</span> Alerts
+      <span class="nav-count" id="count-alerts"></span>
+    </a>
+    <a href="#/fdir" class="nav-item" data-section="fdir">
+      <span class="nav-glyph">◆</span> FDIR
+      <span class="nav-count" id="count-fdir"></span>
+    </a>
+    <a href="#/flight_rules" class="nav-item" data-section="flight_rules">
+      <span class="nav-glyph">▣</span> Flight Rules
+      <span class="nav-count" id="count-flight_rules"></span>
+    </a>
+    <a href="#/procedures" class="nav-item" data-section="procedures">
+      <span class="nav-glyph">▶</span> Procedures
+      <span class="nav-count" id="count-procedures"></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-meta">
+      <div class="meta-row"><span>Build</span><span id="meta-build">—</span></div>
+      <div class="meta-row"><span>Mode</span><span class="meta-offline">OFFLINE</span></div>
+    </div>
+  </nav>
+
+  <main id="main" class="main">
+    <div class="loading">Loading…</div>
+  </main>
+
+  <div id="search-results" class="search-results" hidden></div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

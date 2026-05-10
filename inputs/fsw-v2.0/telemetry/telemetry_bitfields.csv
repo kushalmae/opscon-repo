@@ -1,0 +1,26 @@
+mnemonic,bit_position,bit_name,description
+TLM_EPS_PWR_STATE,0,CH0_ON,Power channel 0 enabled
+TLM_EPS_PWR_STATE,1,CH1_ON,Power channel 1 enabled
+TLM_EPS_PWR_STATE,2,CH2_ON,Power channel 2 enabled
+TLM_EPS_PWR_STATE,3,CH3_ON,Power channel 3 enabled
+TLM_EPS_PWR_STATE,4,MAIN_BUS,Main bus enabled
+TLM_EPS_PWR_STATE,5,AUX_BUS,Auxiliary bus enabled
+TLM_EPS_FAULT_FLAGS,0,OVER_V,Overvoltage detected
+TLM_EPS_FAULT_FLAGS,1,UNDER_V,Undervoltage detected
+TLM_EPS_FAULT_FLAGS,2,OVER_I,Overcurrent detected
+TLM_EPS_FAULT_FLAGS,3,OVER_T,Overtemperature detected
+TLM_EPS_FAULT_FLAGS,4,BMS_FAULT,Battery management system fault
+TLM_EPS_FAULT_FLAGS,5,ARRAY_FAIL,Solar array failure detected
+TLM_CDH_FAULT_FLAGS,0,WD_RESET,Watchdog timer reset
+TLM_CDH_FAULT_FLAGS,1,MEM_ECC,Memory ECC error
+TLM_CDH_FAULT_FLAGS,2,TASK_HUNG,Task hung
+TLM_CDH_FAULT_FLAGS,3,FILESYS,Filesystem fault
+TLM_CDH_FAULT_FLAGS,4,TIME_JUMP,Time discontinuity
+TLM_THERMAL_HTR_STATE,0,BATT_HTR,Battery heater on
+TLM_THERMAL_HTR_STATE,1,PROP_HTR,Propellant heater on
+TLM_THERMAL_HTR_STATE,2,PAYLOAD_HTR,Payload heater on
+TLM_THERMAL_HTR_STATE,3,STAR_HTR,Star tracker heater on
+TLM_PROP_VALVE_STATE,0,V1_OPEN,Valve 1 open
+TLM_PROP_VALVE_STATE,1,V2_OPEN,Valve 2 open
+TLM_PROP_VALVE_STATE,2,V3_OPEN,Valve 3 open
+TLM_PROP_VALVE_STATE,3,V4_OPEN,Valve 4 open

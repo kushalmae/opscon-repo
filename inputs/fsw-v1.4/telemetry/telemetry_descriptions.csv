@@ -1,0 +1,193 @@
+mnemonic,description
+TLM_EPS_BATT_V,Battery bus voltage
+TLM_EPS_BATT_I,Battery bus current
+TLM_EPS_BATT_TEMP,Battery cell temperature
+TLM_EPS_BATT_SOC,Battery state of charge
+TLM_EPS_SOLAR_V,Solar array bus voltage
+TLM_EPS_SOLAR_I,Solar array current
+TLM_EPS_PWR_STATE,Power channel state bitfield
+TLM_EPS_FAULT_FLAGS,EPS fault flags
+TLM_ADCS_MODE,ADCS control mode
+TLM_ADCS_QUAT_X,Estimated attitude quaternion X
+TLM_ADCS_QUAT_Y,Estimated attitude quaternion Y
+TLM_ADCS_QUAT_Z,Estimated attitude quaternion Z
+TLM_ADCS_QUAT_W,Estimated attitude quaternion W
+TLM_ADCS_RATE_X,Body rate about X
+TLM_ADCS_RATE_Y,Body rate about Y
+TLM_ADCS_RATE_Z,Body rate about Z
+TLM_ADCS_RW1_RPM,Reaction wheel 1 speed
+TLM_ADCS_RW2_RPM,Reaction wheel 2 speed
+TLM_ADCS_RW3_RPM,Reaction wheel 3 speed
+TLM_ADCS_RW4_RPM,Reaction wheel 4 speed
+TLM_ADCS_STAR_LOCK,Star tracker lock status
+TLM_COMM_TX_PWR,Transmitter output power
+TLM_COMM_RX_RSSI,Receiver signal strength
+TLM_COMM_BAND,Active RF band
+TLM_COMM_LOCK,Carrier lock status
+TLM_COMM_BIT_ERR_RATE,Bit error rate
+TLM_CDH_CPU_LOAD,CPU utilization
+TLM_CDH_MEM_FREE,Free memory
+TLM_CDH_BOOT_COUNT,Boot counter
+TLM_CDH_TIME,Onboard time since epoch
+TLM_CDH_FAULT_FLAGS,CDH fault flags
+TLM_THERMAL_BUS_TEMP,Bus baseplate temperature
+TLM_THERMAL_RAD_TEMP,Radiator temperature
+TLM_THERMAL_HTR_STATE,Heater state bitfield
+TLM_PAYLOAD_INST_TEMP,Instrument detector temperature
+TLM_PAYLOAD_INST_STATE,Instrument power/op state
+TLM_PAYLOAD_IMG_COUNT,Images captured this orbit
+TLM_PAYLOAD_BUFFER_PCT,Image buffer fill percentage
+TLM_PROP_TANK_P,Propellant tank pressure
+TLM_PROP_TANK_T,Propellant tank temperature
+TLM_PROP_VALVE_STATE,Valve state bitfield
+TLM_PROP_LAST_DV,Last commanded delta-v
+TLM_EPS_AUX_00,EPS auxiliary channel 0
+TLM_ADCS_AUX_01,ADCS auxiliary channel 1
+TLM_COMM_AUX_02,COMM auxiliary channel 2
+TLM_CDH_AUX_03,CDH auxiliary channel 3
+TLM_THERMAL_AUX_04,THERMAL auxiliary channel 4
+TLM_PAYLOAD_AUX_05,PAYLOAD auxiliary channel 5
+TLM_PROP_AUX_06,PROP auxiliary channel 6
+TLM_EPS_AUX_07,EPS auxiliary channel 7
+TLM_ADCS_AUX_08,ADCS auxiliary channel 8
+TLM_COMM_AUX_09,COMM auxiliary channel 9
+TLM_CDH_AUX_10,CDH auxiliary channel 10
+TLM_THERMAL_AUX_11,THERMAL auxiliary channel 11
+TLM_PAYLOAD_AUX_12,PAYLOAD auxiliary channel 12
+TLM_PROP_AUX_13,PROP auxiliary channel 13
+TLM_EPS_AUX_14,EPS auxiliary channel 14
+TLM_ADCS_AUX_15,ADCS auxiliary channel 15
+TLM_COMM_AUX_00,COMM auxiliary channel 0
+TLM_CDH_AUX_01,CDH auxiliary channel 1
+TLM_THERMAL_AUX_02,THERMAL auxiliary channel 2
+TLM_PAYLOAD_AUX_03,PAYLOAD auxiliary channel 3
+TLM_PROP_AUX_04,PROP auxiliary channel 4
+TLM_EPS_AUX_05,EPS auxiliary channel 5
+TLM_ADCS_AUX_06,ADCS auxiliary channel 6
+TLM_COMM_AUX_07,COMM auxiliary channel 7
+TLM_CDH_AUX_08,CDH auxiliary channel 8
+TLM_THERMAL_AUX_09,THERMAL auxiliary channel 9
+TLM_PAYLOAD_AUX_10,PAYLOAD auxiliary channel 10
+TLM_PROP_AUX_11,PROP auxiliary channel 11
+TLM_EPS_AUX_12,EPS auxiliary channel 12
+TLM_ADCS_AUX_13,ADCS auxiliary channel 13
+TLM_COMM_AUX_14,COMM auxiliary channel 14
+TLM_CDH_AUX_15,CDH auxiliary channel 15
+TLM_THERMAL_AUX_00,THERMAL auxiliary channel 0
+TLM_PAYLOAD_AUX_01,PAYLOAD auxiliary channel 1
+TLM_PROP_AUX_02,PROP auxiliary channel 2
+TLM_EPS_AUX_03,EPS auxiliary channel 3
+TLM_ADCS_AUX_04,ADCS auxiliary channel 4
+TLM_COMM_AUX_05,COMM auxiliary channel 5
+TLM_CDH_AUX_06,CDH auxiliary channel 6
+TLM_THERMAL_AUX_07,THERMAL auxiliary channel 7
+TLM_PAYLOAD_AUX_08,PAYLOAD auxiliary channel 8
+TLM_PROP_AUX_09,PROP auxiliary channel 9
+TLM_EPS_AUX_10,EPS auxiliary channel 10
+TLM_ADCS_AUX_11,ADCS auxiliary channel 11
+TLM_COMM_AUX_12,COMM auxiliary channel 12
+TLM_CDH_AUX_13,CDH auxiliary channel 13
+TLM_THERMAL_AUX_14,THERMAL auxiliary channel 14
+TLM_PAYLOAD_AUX_15,PAYLOAD auxiliary channel 15
+TLM_PROP_AUX_00,PROP auxiliary channel 0
+TLM_EPS_AUX_01,EPS auxiliary channel 1
+TLM_ADCS_AUX_02,ADCS auxiliary channel 2
+TLM_COMM_AUX_03,COMM auxiliary channel 3
+TLM_CDH_AUX_04,CDH auxiliary channel 4
+TLM_THERMAL_AUX_05,THERMAL auxiliary channel 5
+TLM_PAYLOAD_AUX_06,PAYLOAD auxiliary channel 6
+TLM_PROP_AUX_07,PROP auxiliary channel 7
+TLM_EPS_AUX_08,EPS auxiliary channel 8
+TLM_ADCS_AUX_09,ADCS auxiliary channel 9
+TLM_COMM_AUX_10,COMM auxiliary channel 10
+TLM_CDH_AUX_11,CDH auxiliary channel 11
+TLM_THERMAL_AUX_12,THERMAL auxiliary channel 12
+TLM_PAYLOAD_AUX_13,PAYLOAD auxiliary channel 13
+TLM_PROP_AUX_14,PROP auxiliary channel 14
+TLM_EPS_AUX_15,EPS auxiliary channel 15
+TLM_ADCS_AUX_00,ADCS auxiliary channel 0
+TLM_COMM_AUX_01,COMM auxiliary channel 1
+TLM_CDH_AUX_02,CDH auxiliary channel 2
+TLM_THERMAL_AUX_03,THERMAL auxiliary channel 3
+TLM_PAYLOAD_AUX_04,PAYLOAD auxiliary channel 4
+TLM_PROP_AUX_05,PROP auxiliary channel 5
+TLM_EPS_AUX_06,EPS auxiliary channel 6
+TLM_ADCS_AUX_07,ADCS auxiliary channel 7
+TLM_COMM_AUX_08,COMM auxiliary channel 8
+TLM_CDH_AUX_09,CDH auxiliary channel 9
+TLM_THERMAL_AUX_10,THERMAL auxiliary channel 10
+TLM_PAYLOAD_AUX_11,PAYLOAD auxiliary channel 11
+TLM_PROP_AUX_12,PROP auxiliary channel 12
+TLM_EPS_AUX_13,EPS auxiliary channel 13
+TLM_ADCS_AUX_14,ADCS auxiliary channel 14
+TLM_COMM_AUX_15,COMM auxiliary channel 15
+TLM_CDH_AUX_00,CDH auxiliary channel 0
+TLM_THERMAL_AUX_01,THERMAL auxiliary channel 1
+TLM_PAYLOAD_AUX_02,PAYLOAD auxiliary channel 2
+TLM_PROP_AUX_03,PROP auxiliary channel 3
+TLM_EPS_AUX_04,EPS auxiliary channel 4
+TLM_ADCS_AUX_05,ADCS auxiliary channel 5
+TLM_COMM_AUX_06,COMM auxiliary channel 6
+TLM_CDH_AUX_07,CDH auxiliary channel 7
+TLM_THERMAL_AUX_08,THERMAL auxiliary channel 8
+TLM_PAYLOAD_AUX_09,PAYLOAD auxiliary channel 9
+TLM_PROP_AUX_10,PROP auxiliary channel 10
+TLM_EPS_AUX_11,EPS auxiliary channel 11
+TLM_ADCS_AUX_12,ADCS auxiliary channel 12
+TLM_COMM_AUX_13,COMM auxiliary channel 13
+TLM_CDH_AUX_14,CDH auxiliary channel 14
+TLM_THERMAL_AUX_15,THERMAL auxiliary channel 15
+TLM_PAYLOAD_AUX_00,PAYLOAD auxiliary channel 0
+TLM_PROP_AUX_01,PROP auxiliary channel 1
+TLM_EPS_AUX_02,EPS auxiliary channel 2
+TLM_ADCS_AUX_03,ADCS auxiliary channel 3
+TLM_COMM_AUX_04,COMM auxiliary channel 4
+TLM_CDH_AUX_05,CDH auxiliary channel 5
+TLM_THERMAL_AUX_06,THERMAL auxiliary channel 6
+TLM_PAYLOAD_AUX_07,PAYLOAD auxiliary channel 7
+TLM_PROP_AUX_08,PROP auxiliary channel 8
+TLM_EPS_AUX_09,EPS auxiliary channel 9
+TLM_ADCS_AUX_10,ADCS auxiliary channel 10
+TLM_COMM_AUX_11,COMM auxiliary channel 11
+TLM_CDH_AUX_12,CDH auxiliary channel 12
+TLM_THERMAL_AUX_13,THERMAL auxiliary channel 13
+TLM_PAYLOAD_AUX_14,PAYLOAD auxiliary channel 14
+TLM_PROP_AUX_15,PROP auxiliary channel 15
+TLM_EPS_AUX_00,EPS auxiliary channel 0
+TLM_ADCS_AUX_01,ADCS auxiliary channel 1
+TLM_COMM_AUX_02,COMM auxiliary channel 2
+TLM_CDH_AUX_03,CDH auxiliary channel 3
+TLM_THERMAL_AUX_04,THERMAL auxiliary channel 4
+TLM_PAYLOAD_AUX_05,PAYLOAD auxiliary channel 5
+TLM_PROP_AUX_06,PROP auxiliary channel 6
+TLM_EPS_AUX_07,EPS auxiliary channel 7
+TLM_ADCS_AUX_08,ADCS auxiliary channel 8
+TLM_COMM_AUX_09,COMM auxiliary channel 9
+TLM_CDH_AUX_10,CDH auxiliary channel 10
+TLM_THERMAL_AUX_11,THERMAL auxiliary channel 11
+TLM_PAYLOAD_AUX_12,PAYLOAD auxiliary channel 12
+TLM_PROP_AUX_13,PROP auxiliary channel 13
+TLM_EPS_AUX_14,EPS auxiliary channel 14
+TLM_ADCS_AUX_15,ADCS auxiliary channel 15
+TLM_COMM_AUX_00,COMM auxiliary channel 0
+TLM_CDH_AUX_01,CDH auxiliary channel 1
+TLM_THERMAL_AUX_02,THERMAL auxiliary channel 2
+TLM_PAYLOAD_AUX_03,PAYLOAD auxiliary channel 3
+TLM_PROP_AUX_04,PROP auxiliary channel 4
+TLM_EPS_AUX_05,EPS auxiliary channel 5
+TLM_ADCS_AUX_06,ADCS auxiliary channel 6
+TLM_COMM_AUX_07,COMM auxiliary channel 7
+TLM_CDH_AUX_08,CDH auxiliary channel 8
+TLM_THERMAL_AUX_09,THERMAL auxiliary channel 9
+TLM_PAYLOAD_AUX_10,PAYLOAD auxiliary channel 10
+TLM_PROP_AUX_11,PROP auxiliary channel 11
+TLM_EPS_AUX_12,EPS auxiliary channel 12
+TLM_ADCS_AUX_13,ADCS auxiliary channel 13
+TLM_COMM_AUX_14,COMM auxiliary channel 14
+TLM_CDH_AUX_15,CDH auxiliary channel 15
+TLM_THERMAL_AUX_00,THERMAL auxiliary channel 0
+TLM_PAYLOAD_AUX_01,PAYLOAD auxiliary channel 1
+TLM_PROP_AUX_02,PROP auxiliary channel 2
+TLM_EPS_AUX_03,EPS auxiliary channel 3
+TLM_ADCS_AUX_04,ADCS auxiliary channel 4
+TLM_COMM_AUX_05,COMM auxiliary channel 5

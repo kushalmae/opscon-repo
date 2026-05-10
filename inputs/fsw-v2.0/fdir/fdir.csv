@@ -1,0 +1,23 @@
+fdir_id,title,response,associated_procedure,severity,fsw_min_version
+FDIR_EPS_001,Low battery,"Reduce non-essential loads, command CMD_EPS_PWR_OFF for low-priority channels",PROC_EPS_LOAD_SHED,WARNING,1.0
+FDIR_EPS_002,Battery management fault,"Power cycle BMS via CMD_EPS_BATT_RESET, monitor TLM_EPS_BATT_V",PROC_EPS_BMS_RECOVERY,CRITICAL,1.0
+FDIR_EPS_003,Battery overtemperature,Disable charging via CMD_EPS_BATT_TRICKLE rate=0,PROC_EPS_BATT_THERMAL,WARNING,1.0
+FDIR_EPS_004,EPS overvoltage,Isolate affected channel via CMD_EPS_PWR_OFF,PROC_EPS_OVERVOLTAGE,WARNING,1.0
+FDIR_ADCS_001,ADCS in SAFE,"Verify spacecraft state, command CMD_ADCS_MODE_SET to recover",PROC_ADCS_SAFE_RECOVERY,WARNING,1.0
+FDIR_ADCS_002,Body rates exceed nominal,Engage detumble via CMD_ADCS_MODE_SET mode=DETUMBLE,PROC_ADCS_DETUMBLE,WARNING,1.0
+FDIR_ADCS_003,Reaction wheel saturation,Fire magnetorquers via CMD_ADCS_MTQ_FIRE for momentum dump,PROC_ADCS_MOMENTUM_DUMP,CRITICAL,1.0
+FDIR_ADCS_004,Star tracker lost lock,"Reissue CMD_ADCS_STAR_TRACK, verify TLM_ADCS_STAR_LOCK",PROC_ADCS_STAR_REACQ,WARNING,1.0
+FDIR_COMM_001,Link degraded,"Switch RF band via CMD_COMM_TX_ENABLE, increase power via CMD_COMM_TX_POWER",PROC_COMM_LINK_RECOVERY,WARNING,1.0
+FDIR_COMM_002,High BER,"Reduce data rate, switch to redundant transmitter",PROC_COMM_BER_MITIGATION,WARNING,1.0
+FDIR_CDH_001,CPU overload,"Suspend non-essential tasks, dump task list",PROC_CDH_CPU_RECOVERY,WARNING,1.0
+FDIR_CDH_002,Memory low,"Run cleanup, delete temp files via CMD_CDH_FILE_DELETE",PROC_CDH_MEM_CLEANUP,WARNING,1.0
+FDIR_CDH_003,Watchdog reset,"Inspect TLM_CDH_BOOT_COUNT, dump memory via CMD_CDH_MEM_DUMP",PROC_CDH_WD_INVESTIGATION,WARNING,1.0
+FDIR_CDH_004,Memory ECC error,"Dump affected region, schedule CMD_CDH_MEM_PATCH if persistent",PROC_CDH_ECC_RECOVERY,WARNING,1.0
+FDIR_THM_001,Thermal high,"Engage radiator, reduce active loads",PROC_THM_HOT_RECOVERY,WARNING,1.0
+FDIR_THM_002,Thermal low,Enable heaters via CMD_THERMAL_HTR_ON,PROC_THM_COLD_RECOVERY,WARNING,1.0
+FDIR_PAY_001,Detector hot,"Suspend imaging, allow cooldown, monitor TLM_PAYLOAD_INST_TEMP",PROC_PAY_THERMAL_HOLD,WARNING,1.0
+FDIR_PAY_002,Instrument fault,Power cycle via CMD_PAYLOAD_INST_OFF then CMD_PAYLOAD_INST_ON,PROC_PAY_RECOVERY,CRITICAL,1.0
+FDIR_PAY_003,Buffer full,Initiate dump via CMD_COMM_DUMP_START,PROC_PAY_BUFFER_DUMP,WARNING,1.0
+FDIR_PROP_001,Tank overpressure,"Vent via CMD_PROP_VALVE_OPEN, monitor TLM_PROP_TANK_P",PROC_PROP_VENT,WARNING,1.0
+FDIR_PROP_002,Tank underpressure,"Halt all burn planning, escalate to engineering",PROC_PROP_LOW_P_HOLD,WARNING,1.0
+FDIR_PROP_003,Propellant cold,Enable propellant heater via CMD_THERMAL_HTR_ON id=PROP,PROC_PROP_THERMAL,WARNING,1.0

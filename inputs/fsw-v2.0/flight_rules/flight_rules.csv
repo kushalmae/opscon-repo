@@ -1,0 +1,13 @@
+rule_id,subsystem,rule_text,related_telemetry,operator_action,fsw_min_version
+FR_EPS_001,EPS,Battery shall not be discharged below 22.0 V during eclipse,TLM_EPS_BATT_V,Operator must verify SOC > 30% before entering eclipse,1.0
+FR_EPS_002,EPS,Solar array deployment shall not be commanded while in eclipse,TLM_EPS_SOLAR_V,Verify solar voltage > 0 before CMD_EPS_SOLAR_DEPLOY,1.0
+FR_ADCS_001,ADCS,Reaction wheel commanded RPM shall not exceed +/- 5500,TLM_ADCS_RW1_RPM,Limit CMD_ADCS_RW_SPIN argument to within bounds,1.0
+FR_ADCS_002,ADCS,ADCS mode transition to INERTIAL requires star tracker lock,TLM_ADCS_STAR_LOCK,Verify TLM_ADCS_STAR_LOCK == LOCKED before CMD_ADCS_MODE_SET INERTIAL,1.0
+FR_COMM_001,COMM,Transmitter shall not be enabled while ground station is below 5 deg elevation,TLM_COMM_TX_PWR,AOS verification required before CMD_COMM_TX_ENABLE,1.0
+FR_CDH_001,CDH,Memory patches shall be uplinked only during contact passes with full uplink margin,TLM_CDH_MEM_FREE,Operator must obtain second-operator concurrence for CMD_CDH_MEM_PATCH,1.0
+FR_THM_001,THERMAL,Battery heater shall remain on whenever battery temperature < 5 degC,TLM_EPS_BATT_TEMP,FDIR_THM_002 will autonomously enable; verify within 30s,1.0
+FR_PAY_001,PAYLOAD,Imaging shall not be commanded while ADCS is in SAFE,TLM_ADCS_MODE,Verify TLM_ADCS_MODE != SAFE before CMD_PAYLOAD_IMG_CAPTURE,1.0
+FR_PAY_002,PAYLOAD,Instrument shall not be powered on while detector temperature > 20 degC,TLM_PAYLOAD_INST_TEMP,Wait for cooldown before CMD_PAYLOAD_INST_ON,1.0
+FR_PROP_001,PROP,Burns shall not be executed with tank pressure < 1000 kPa,TLM_PROP_TANK_P,Verify pressure prior to CMD_PROP_BURN_EXEC,1.0
+FR_PROP_002,PROP,Burns require dual operator concurrence,,Two operators must both confirm before CMD_PROP_BURN_EXEC,1.0
+FR_PROP_003,PROP,Propellant temperature shall remain above 5 degC at all times,TLM_PROP_TANK_T,Heater per FDIR_PROP_003,1.0

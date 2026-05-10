@@ -1,0 +1,23 @@
+procedure_id,title,type,description,related_commands,related_telemetry,duration_min,criticality,owner,fsw_min_version
+PROC_EPS_LOAD_SHED,EPS load shed,python,Drop non-essential loads to preserve battery during contingency,CMD_EPS_PWR_OFF,"TLM_EPS_BATT_V,TLM_EPS_BATT_SOC",5,HAZARDOUS,ops-team,1.0
+PROC_EPS_BMS_RECOVERY,BMS recovery,python,Power-cycle the battery management system and verify telemetry,CMD_EPS_BATT_RESET,"TLM_EPS_BATT_V,TLM_EPS_BATT_TEMP,TLM_EPS_FAULT_FLAGS",10,CRITICAL,ops-team,1.0
+PROC_EPS_BATT_THERMAL,Battery thermal recovery,python,Reduce charging current and engage cooling pathway,CMD_EPS_BATT_TRICKLE,TLM_EPS_BATT_TEMP,15,HAZARDOUS,ops-team,1.0
+PROC_EPS_OVERVOLTAGE,EPS overvoltage isolation,python,Isolate the offending channel and inspect fault flags,CMD_EPS_PWR_OFF,"TLM_EPS_FAULT_FLAGS,TLM_EPS_BATT_V",8,CRITICAL,ops-team,1.0
+PROC_ADCS_SAFE_RECOVERY,ADCS SAFE recovery,abstract,"High-level recovery wrapper: verify state, run detumble, return to NADIR",CMD_ADCS_MODE_SET,"TLM_ADCS_MODE,TLM_ADCS_RATE_X,TLM_ADCS_RATE_Y,TLM_ADCS_RATE_Z",30,CRITICAL,ops-team,1.0
+PROC_ADCS_DETUMBLE,ADCS detumble,python,Execute detumble mode and verify body rates converge,"CMD_ADCS_MODE_SET,CMD_ADCS_MTQ_FIRE","TLM_ADCS_RATE_X,TLM_ADCS_RATE_Y,TLM_ADCS_RATE_Z",20,HAZARDOUS,ops-team,1.0
+PROC_ADCS_MOMENTUM_DUMP,Reaction wheel momentum dump,python,Use magnetorquers to bleed off accumulated wheel momentum,"CMD_ADCS_MTQ_FIRE,CMD_ADCS_RW_SPIN","TLM_ADCS_RW1_RPM,TLM_ADCS_RW2_RPM,TLM_ADCS_RW3_RPM,TLM_ADCS_RW4_RPM",25,NOMINAL,ops-team,1.0
+PROC_ADCS_STAR_REACQ,Star tracker reacquisition,python,Reissue tracking command and verify lock,CMD_ADCS_STAR_TRACK,TLM_ADCS_STAR_LOCK,10,NOMINAL,ops-team,1.0
+PROC_COMM_LINK_RECOVERY,Comm link recovery,abstract,"Stepwise recovery: verify pointing, switch band, increase power","CMD_COMM_TX_ENABLE,CMD_COMM_TX_POWER","TLM_COMM_RX_RSSI,TLM_COMM_LOCK,TLM_COMM_BIT_ERR_RATE",15,NOMINAL,ops-team,1.0
+PROC_COMM_BER_MITIGATION,BER mitigation,python,"Reduce data rate, fall back to redundant TX",CMD_COMM_TX_POWER,TLM_COMM_BIT_ERR_RATE,10,NOMINAL,ops-team,1.0
+PROC_CDH_CPU_RECOVERY,CDH CPU recovery,python,Identify hung tasks and suspend non-essential workloads,,"TLM_CDH_CPU_LOAD,TLM_CDH_FAULT_FLAGS",10,HAZARDOUS,ops-team,1.0
+PROC_CDH_MEM_CLEANUP,CDH memory cleanup,python,Delete temporary files and dump usage report,CMD_CDH_FILE_DELETE,TLM_CDH_MEM_FREE,8,NOMINAL,ops-team,1.0
+PROC_CDH_WD_INVESTIGATION,Watchdog investigation,abstract,Manual checklist + dump memory regions for ground review,CMD_CDH_MEM_DUMP,"TLM_CDH_BOOT_COUNT,TLM_CDH_FAULT_FLAGS",45,CRITICAL,ops-team,1.0
+PROC_CDH_ECC_RECOVERY,Memory ECC recovery,python,"Dump affected region; if persistent, schedule patch","CMD_CDH_MEM_DUMP,CMD_CDH_MEM_PATCH",TLM_CDH_FAULT_FLAGS,30,CRITICAL,ops-team,1.0
+PROC_THM_HOT_RECOVERY,Thermal hot recovery,python,Reduce active loads and verify radiator pathway,"CMD_THERMAL_HTR_OFF,CMD_PAYLOAD_INST_OFF","TLM_THERMAL_BUS_TEMP,TLM_THERMAL_RAD_TEMP",20,HAZARDOUS,ops-team,1.0
+PROC_THM_COLD_RECOVERY,Thermal cold recovery,python,Enable heaters and monitor return to nominal range,CMD_THERMAL_HTR_ON,"TLM_THERMAL_BUS_TEMP,TLM_EPS_BATT_TEMP",20,NOMINAL,ops-team,1.0
+PROC_PAY_THERMAL_HOLD,Payload thermal hold,python,Suspend imaging until detector cools,CMD_PAYLOAD_IMG_ABORT,TLM_PAYLOAD_INST_TEMP,15,NOMINAL,ops-team,1.0
+PROC_PAY_RECOVERY,Payload recovery,abstract,"Power-cycle instrument, run cal, verify nominal operation","CMD_PAYLOAD_INST_OFF,CMD_PAYLOAD_INST_ON,CMD_PAYLOAD_INST_CAL","TLM_PAYLOAD_INST_STATE,TLM_PAYLOAD_INST_TEMP",30,HAZARDOUS,ops-team,1.0
+PROC_PAY_BUFFER_DUMP,Payload buffer dump,python,Initiate dump of stored imagery during next contact,"CMD_COMM_DUMP_START,CMD_COMM_DUMP_STOP",TLM_PAYLOAD_BUFFER_PCT,60,NOMINAL,ops-team,1.0
+PROC_PROP_VENT,Propellant tank vent,abstract,Controlled venting with operator concurrence,"CMD_PROP_VALVE_OPEN,CMD_PROP_VALVE_CLOSE",TLM_PROP_TANK_P,30,CRITICAL,ops-team,1.0
+PROC_PROP_LOW_P_HOLD,Low pressure hold,abstract,"Halt burn planning, escalate to engineering review",,TLM_PROP_TANK_P,60,CRITICAL,ops-team,1.0
+PROC_PROP_THERMAL,Propellant thermal,python,Enable propellant heater zone and verify warming trend,CMD_THERMAL_HTR_ON,TLM_PROP_TANK_T,25,NOMINAL,ops-team,1.0
