@@ -1,0 +1,47 @@
+{
+  "versions": [
+    {
+      "version": "1.4",
+      "stats": {
+        "commands": 4452,
+        "telemetry": 192,
+        "alerts": 1000,
+        "fdir": 22,
+        "flight_rules": 12,
+        "procedures": 22
+      },
+      "subsystems": [
+        "ADCS",
+        "CDH",
+        "COMM",
+        "EPS",
+        "PAYLOAD",
+        "PROP",
+        "THERMAL"
+      ],
+      "warnings": 0
+    },
+    {
+      "version": "2.0",
+      "stats": {
+        "commands": 5000,
+        "telemetry": 242,
+        "alerts": 1000,
+        "fdir": 22,
+        "flight_rules": 12,
+        "procedures": 22
+      },
+      "subsystems": [
+        "ADCS",
+        "CDH",
+        "COMM",
+        "EPS",
+        "PAYLOAD",
+        "PROP",
+        "THERMAL"
+      ],
+      "warnings": 0
+    }
+  ],
+  "default_version": "2.0"
+}

@@ -32,9 +32,9 @@ def inline_site(out_root: Path, webapp_root: Path, manifest: dict, bundles: dict
         bundles, and indexes.
       - Inline app.js (which checks for __OPSCON_DATA__ and skips fetch()).
     """
-    html = (webapp_root / "index.html").read_text()
-    css = (webapp_root / "assets" / "style.css").read_text()
-    js = (webapp_root / "assets" / "app.js").read_text()
+    html = (webapp_root / "index.html").read_text(encoding="utf-8")
+    css = (webapp_root / "assets" / "style.css").read_text(encoding="utf-8")
+    js = (webapp_root / "assets" / "app.js").read_text(encoding="utf-8")
 
     data_blob = {
         "manifest": manifest,
@@ -60,7 +60,7 @@ def inline_site(out_root: Path, webapp_root: Path, manifest: dict, bundles: dict
         inlined_data + "\n" + inlined_js
     )
 
-    (out_root / "index.html").write_text(html)
+    (out_root / "index.html").write_text(html, encoding="utf-8")
 
 
 def main():
@@ -135,7 +135,7 @@ def main():
     # Newest version becomes default
     manifest["default_version"] = max(versions)
 
-    with open(out_root / "data" / "manifest.json", "w") as f:
+    with open(out_root / "data" / "manifest.json", "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
 
     if not args.no_inline:
